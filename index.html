@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Frame Click Interaction Fix</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- A simple clickable box with the class and component attached -->
+      <a-box class="clickable" position="0 1 -3" width="1" height="1" depth="1" color="blue" change-color-on-click></a-box>
+
+      <!-- Camera setup with raycaster attached -->
+      <a-entity camera position="0 1.6 0" wasd-controls look-controls>
+        <!-- The cursor will use the raycaster to detect the clickable class -->
+        <a-cursor color="black" raycaster="objects: .clickable" fuse="false"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
